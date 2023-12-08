@@ -29,6 +29,7 @@ router.get("/category", async (req, res) => {
 router.get("/best", async (req, res) => {
   try {
     const items = await MainItems.find({ isBest: true });
+    console.log(items);
     res.json(items);
   } catch (err) {
     res.json({ message: err });
